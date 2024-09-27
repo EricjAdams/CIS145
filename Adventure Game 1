@@ -1,0 +1,89 @@
+#include <stdio.h>
+
+int main() {
+    int choice1, choice2, choice3;
+
+    // Introduction
+    printf("Welcome to the Choose Your Own Adventure Game!\n");
+    printf("You find yourself in a dark forest. There are two paths in front of you.\n");
+    printf("Do you:\n");
+    printf("1. Take the path to the left.\n");
+    printf("2. Take the path to the right.\n");
+    printf("Enter your choice (1 or 2): ");
+    scanf("%d", &choice1);
+
+    // First decision
+    if (choice1 == 1) {
+        printf("\nYou walk down the left path and encounter a river.\n");
+        printf("Do you:\n");
+        printf("1. Try to swim across the river.\n");
+        printf("2. Look for a bridge.\n");
+        printf("Enter your choice (1 or 2): ");
+        scanf("%d", &choice2);
+
+        // Second decision for path 1
+        if (choice2 == 1) {
+            printf("\nYou try to swim across the river but the current is too strong.\n");
+            printf("You drown. Game Over.\n");
+        } else if (choice2 == 2) {
+            printf("\nYou find a bridge and safely cross the river.\n");
+            printf("On the other side, you find a treasure chest.\n");
+            printf("Do you:\n");
+            printf("1. Open the chest.\n");
+            printf("2. Leave it and walk away.\n");
+            printf("Enter your choice (1 or 2): ");
+            scanf("%d", &choice3);
+
+            // Third decision for path 1
+            if (choice3 == 1) {
+                printf("\nYou open the chest and find a pile of gold! You win!\n");
+            } else if (choice3 == 2) {
+                printf("\nYou walk away from the chest, leaving the treasure behind. You wander through the forest and eventually find your way home.\n");
+                printf("You survived, but missed the treasure. Game Over.\n");
+            } else {
+                printf("\nInvalid choice. Game Over.\n");
+            }
+        } else {
+            printf("\nInvalid choice. Game Over.\n");
+        }
+
+    } else if (choice1 == 2) {
+        printf("\nYou take the right path and encounter a cave.\n");
+        printf("Do you:\n");
+        printf("1. Enter the cave.\n");
+        printf("2. Walk past the cave.\n");
+        printf("Enter your choice (1 or 2): ");
+        scanf("%d", &choice2);
+
+        // Second decision for path 2
+        if (choice2 == 1) {
+            printf("\nYou enter the cave and discover a sleeping dragon!\n");
+            printf("Do you:\n");
+            printf("1. Try to sneak past the dragon.\n");
+            printf("2. Leave the cave quietly.\n");
+            printf("Enter your choice (1 or 2): ");
+            scanf("%d", &choice3);
+
+            // Third decision for path 2
+            if (choice3 == 1) {
+                printf("\nYou try to sneak past the dragon, but it wakes up and roasts you with its fiery breath.\n");
+                printf("You die. Game Over.\n");
+            } else if (choice3 == 2) {
+                printf("\nYou leave the cave quietly, avoiding the dragon. You continue your journey and survive.\n");
+                printf("Game Over.\n");
+            } else {
+                printf("\nInvalid choice. Game Over.\n");
+            }
+        } else if (choice2 == 2) {
+            printf("\nYou walk past the cave and find a peaceful meadow. You decide to rest and enjoy the serenity.\n");
+            printf("You survived the adventure. Game Over.\n");
+        } else {
+            printf("\nInvalid choice. Game Over.\n");
+        }
+
+    } else {
+        printf("\nInvalid choice. Game Over.\n");
+    }
+
+    return 0;
+}
